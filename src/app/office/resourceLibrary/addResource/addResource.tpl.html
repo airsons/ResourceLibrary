@@ -1,0 +1,102 @@
+<section class="container-fluid">
+    <div class="control-group row-fluid">
+        <div class="span2 show-grid">
+            <label for="txtTitle"><t>addResource_title</t></label>
+        </div>
+        <div class="span9 show-grid">
+            <input type="text" style="height: 25px;" ng-model="account.title" validate nospace="true" noempty="true" placeholder="Category Name">
+        </div>
+    </div>
+
+
+    <div class="control-group row-fluid">
+        <div class="span2 show-grid">
+            <label for="txtDescription"><t>addResource_description</t></label>
+        </div>
+        <div class="span9 show-grid">
+            <textarea class="span6" validate nospace="true" noempty="true" ng-model="account.description" cols="20" rows="4" placeholder="Add Descrption Here.. "></textarea>
+        </div>
+    </div>
+
+
+    <div class="control-group row-fluid">
+        <div class="span2 show-grid">
+            <label for="ddlupload" class="control-label"><t>addResource_category</t> :</label></div>
+        <div class="controls span9 show-grid">
+            <select ng-options="cat.CategoryID as cat.CategoryDescription for cat in categoriesBean" ng-model="account.CategoryID" > </select>
+         
+    </div>
+
+    <div class="row-fluid" id="tag_show">
+        <div class="span2 show-grid">
+            <label for="txtCountry"><t>addResource_tags</t>:</label>
+        </div>
+        <div class="span9 show-grid">
+            <fieldset class="control-group span12">             
+                <div class="span3" data-ng-repeat="(tagType,tags) in tagsGroup" style="float:left; margin-right:100px;">
+                  <legend>{{tagType}}</legend>            
+                     <label class="checkbox" ng-repeat="tag in tags">
+                    <input type="checkbox" class="all" ng-model ="tags" value="{{tag.id}}">{{tag.name}}                        
+                </label>
+                </div>
+            </fieldset>            
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span2 show-grid">
+            <label for="txtCutomers"><t>addResource_customer_type</t>:</label>
+        </div>
+        <div class="span9 row-fluid show-grid">
+            <div class="check">
+                <legend><t>addResource_customer_type</t>:</legend>
+                <fieldset>
+                   <div class="control-group span4">
+                       <label class="checkbox" ng-repeat="customer in customerTypes.data.customerTypes">
+                            <input type="checkbox" class="all" ng-model="resCustTypes" value="{{customer.id}}"> {{customer.name}}
+                        </label>
+                    </div>
+               </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <div class="control-group row-fluid">
+        <span class="span2 show-grid">
+            <label id="lblRadio"><t>addResource_selection</t>:</label></span>
+        <span class="span9 show-grid">
+            <label class="radio span2">
+                <input type="radio" ng-model="account.resourceType" value="0" ><t>addResource_file</t>
+            </label>
+            <label class="radio">
+               <input type="radio" ng-model="account.resourceType" value="1"><t>addResource_youtube_url</t>
+            </label>
+        </span>
+    </div>
+
+    <div class="control-group row-fluid" ng-show="account.resourceType == '0'">
+        <span class="span2 show-grid">
+            <label for="txtFiles" id="txtFiles"><t>addResource_files</t>:</label>
+        </span>
+        <span class="span9 show-grid">
+            <input type="file"  ng-file-select="onFileSelect($files)"  class="span6" ng-model="account.url"  noempty="account.resourceType == '0'"/></span>
+    </div>
+
+     <div class="control-group row-fluid" ng-show="account.resourceType == '1'">
+        <span class="span2 show-grid">
+            <label for="txtFiles" ><t>addResource_youtube_url</t>:</label>
+        </span>
+        <span class="span9 show-grid">
+            <input type="text" class="span6" ng-model="account.youtube_url" noempty="account.resourceType == '1'" /></span>
+    </div>
+
+    <div class="row-fluid">
+        <div class="row">
+            <span class="span2"></span>
+            <span class="span3">
+                <a ng-click="back()" class="btn btn-inverse"><t>global_back</t></a>              
+                <a trigger-check="true" validate success="save()" class="btn btn-success"><t>global_upload</t></a>                  
+            </span>
+		</div>
+	</div>
+</section>

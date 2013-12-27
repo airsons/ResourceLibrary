@@ -1,0 +1,23 @@
+<header id="header">
+    <div id="siteheader">
+        <div id="headerbar" class="inner clearfix">           
+            <span ng-click="logOrder()" style="color: white">Log Order Model </span>
+            <span ng-click="localStorage()" style="color: white">-- Log localStorage</span>
+            <span ng-click="clearLocalStorage()" style="color: white">-- clear</span>
+        </div>
+    </div>
+    <div id="sitenavigation">
+        <div id="menubar" class="clearfix">
+            <div class="inner">
+                <nav id="menu" style="float: right">
+                    <select 
+                        ng-options="language.name for language in countryModel.selectedCountry.languages"
+                        ng-model="settings.locale"
+                        ng-change="updateLocale()"
+                        ng-show="settings.showLanguage">
+                    </select>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

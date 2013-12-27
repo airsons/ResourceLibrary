@@ -1,0 +1,17 @@
+<div class="clearfix stepper stepper-{{stepsCount}}">
+    <a ng-repeat="step in steps" class="complete" ng-class="{'last' : $last}" href="#{{step.route}}"><t>{{step.name}}</t></a>
+    <a ng-repeat="step in incomplete"><t>{{step.name}}</t></a>
+</div>
+
+<!-- <div class="clearfix stepper-img">
+    <a ng-repeat="step in steps" href="#{{step.route}}">
+        <div class="step{{step.first && ' first-step' || ''}}{{step.active && ' active' || ''}}{{step.last && ' last-step' || ''}}">
+            <span class="step-text">{{step.name}}</span>
+        </div>
+    </a>
+    <span ng-repeat="step in incomplete">
+        <div class="step{{step.last && ' last-step' || ''}}">
+            <span class="step-text">{{step.name}}</span>
+        </div>
+    </span>
+</div> -->

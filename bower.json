@@ -1,0 +1,33 @@
+{
+  "name": "ng-boilerplate",
+  "version": "0.3.0",
+  "devDependencies": {
+    "angular": "1.2.0-rc.1",
+    "angular-bootstrap": "*",
+    "angular-cookies": "*",
+    "angular-loader": "*",
+    "angular-mocks": "~1.0.7",
+    "angular-scenario": "~1.0.7",
+    "angular-resource": "*",
+    "angular-sanitize": "*",
+    "angular-translate": "~1.1.0",
+    "angular-translate-storage-cookie": "*",
+    "angular-translate-storage-local": "*",
+    "angular-translate-loader-static-files": "*",
+    "angular-ui": "~0.4.0",
+    "angular-ui-router": "~0.2.0",
+    "angular-ui-utils": "~0.0.3",
+    "animate.css": "*",
+    "bootstrap": "~2.3.2",
+    "modernizr": "*",
+    "x-editable": "*",
+    "angularjs-modal-service": "*",
+    "underscore": "*",
+    "jQuery-CreditCardValidator": "https://github.com/PawelDecowski/jQuery-CreditCardValidator.git",
+    "jquery-validation": "~1.11.2"
+  },
+  "dependencies": {},
+  "resolutions": {
+    "angular": "1.2.0-rc.1"
+  }
+}

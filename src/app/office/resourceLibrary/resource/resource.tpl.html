@@ -1,0 +1,63 @@
+<article>
+    <div class="row-fluid">
+        <div class="span3 side">
+            <section class="section section-padded section-bordered section-gradient">
+                <header><t>Categories:</t></header>
+                <div class="controls-row">
+                    <div class="span12">
+                        <ul class="line">
+                            <li class="icn-marketing docs"><a ng-click ="showResources(0,0)">All</a></li>
+                            <li class="icn-marketing docs" ng-repeat="category in categories.data.categories"><a ng-click="showResources(category.id,0)">{{category.name}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="span9 content">
+            <section class="section section-padded section-bordered section-gradient">
+                <header><t>Resources:</t></header>
+                <article>
+                    <div class="controls-row">
+                        <div class="span12">
+                            <a ng-click="addCat()" class="btn span4">Add New Category</a>
+                            <a ng-click="" class="btn span4 hide">Content Management</a>
+                            <a ng-click="addRes()" class="btn span4">Add New Resource</a>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="control-row"  data-ng-repeat="(CategoryType,resources) in resourcesGroup">
+                        <legend>{{CategoryType}}</legend>
+
+                        <div class="row-fluid frmargin" ng-repeat="resource in resources">
+                            <div class="span2 text-center">
+                                <span class="sapn2" ng-show="resource.type !== 'pdf'">
+                                    <img ng-src="./assets/img/icnPNG.png" height="15" /></span>
+                                <span class="sapn2" ng-show="resource.type !== 'png'">
+                                    <img ng-src="./assets/img/icnPDF.png" /></span>
+                            </div>
+                            <div class="span6">
+                                <span class="span9">{{resource.description}} || {{resource.CategoryID}}</span>
+                            </div>
+                            <div class="span2">                              
+                                <span class="span12"><my-download id="content" data="json" /></span>
+                                <span class="btn-group">
+                                    <a ng-click="editResource(resource.CategoryID, resource.resourceID)" class="btn span5">Edit</a>
+                                    <a ng-click="deleteResource(resource.resourceID, resource.title)" class="btn span7">Delete</a>
+                                </span>
+                            </div>
+                            <div class="span2">
+                                <span class="span12">{{resource.date}}</span>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="controls">
+                        <div class="control-group">
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>        
+    </div>
+</article> 

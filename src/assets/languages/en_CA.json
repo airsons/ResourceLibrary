@@ -1,0 +1,20 @@
+{
+    "join_as_country": "CANADA",
+    "sp_add_cleanse2": "to your order?",
+    "footer_executive_support": "Executive Support 800-999-6222",
+    "footer_hours": "M-F, 7 a.m. - 7 p.m. MST",
+    "footer_email": "<a href='mailto:customerservice@unicity.com'>customerservice@unicity.com</a>",
+
+    "account_if_no_enroller": "If you do not know your Enroller’s ID , please contact Unicity Customer Service at 800-999-6222 or check <em>I do not have a referring Enroller ID</em> below.",
+    "account_if_no_sponsor": "If you do not know your Sponsor’s ID, please contact Unicity Customer Service at 800-999-6222 or check I do not have a referring Sponsor ID below.",
+    "account_gov_id": "TIN",
+    "account_gov_id_tip": "The TIN is required for tax purposes. You need this to get PAID.",
+
+    "pay_looking_up_city": "looking up city/province..",
+    "pay_postal_code": "Postal Code",
+    "pay_state": "Province",
+    "pay_select_state": "Select a province",
+
+    "summary_authorize_ship_ar": "I indicate my authorization for Unicity International, Inc. to ship the items I have selected herein for Auto-Refill every month until I cancel, and charge the credit card I have provided for these shipments. I certify that I have read and understand the current Unicity Policies and Procedures regarding Unicity’s Auto-Refill program, and that I can modify or cancel by calling 800-999-6222.",
+    "summary_pc_indicate_intent_2": "To change my monthly order, I must contact customer service at <strong>1-800-999-6222</strong>."
+}

@@ -1,0 +1,901 @@
+/* Enrollment
+----------------------------------------------------------------------------------------------------*/
+/**
+ * Enrollment Global
+ */
+#enroll .content {
+    margin: 0;
+    width: 70%;
+}
+
+#enroll .side {
+    margin-left: 3%;
+    width: 27%;
+}
+
+/* page title */
+.page-title {
+    border-bottom: 1px dotted #333;
+}
+
+h1.page-title  {
+    margin: 0;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+p.page-title-lead  {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 13px;
+    line-height: 1.2em;
+}
+
+/* Enroll Stepper (progress bar) */
+.stepper * { box-sizing: border-box; }
+
+.stepper { 
+    margin: 0 auto 12px;
+}
+
+.stepper a { 
+    display: inline-block; 
+    position: relative;
+    height: 36px; 
+    padding: 0 16px 0 36px;
+    font-size: 14px;
+    line-height: 36px;
+    text-decoration: none; 
+    color: #73848E; 
+    background: #d1d2d4; 
+    margin: 0 10px 6px 0;
+    text-align: center;
+    cursor: text;
+}
+    .stepper.stepper-4 a {
+        width: 228px;
+    }
+    .stepper.stepper-5 a {
+        width: 182px;
+    }
+    .stepper.stepper-6 a {
+        width: 150px;
+    }
+    @-moz-document url-prefix() { 
+        .stepper.stepper-4 a {
+            width: 178px;
+        }
+        .stepper.stepper-5 a {
+            width: 132px;
+        }
+        .stepper.stepper-6 a {
+            width: 100px;
+        }
+    }
+    .stepper a.complete { 
+        color: #fff; 
+        background: #76838d;
+        margin-right: 9px;
+        cursor: pointer;
+    }
+    .stepper a.complete.last { 
+        margin-right: 7px;
+    }
+
+.stepper a:first-child {
+    border-radius: 0;
+    padding-left: 20px;
+}
+.stepper a:last-of-type { 
+    border-radius: 0; 
+    padding-left: 36px;
+    padding-right: 20px;
+    margin: 0;
+}
+
+.stepper a:after { 
+    content: ""; 
+    display: inline-block; 
+    position: absolute;
+    top: 0; 
+    right: -15px; 
+    z-index: 2; 
+    border-left: 15px solid #d1d2d4; 
+    border-top: 18px solid transparent; 
+    border-bottom: 18px solid transparent; 
+}
+    .stepper a.complete:after { 
+        border-left: 15px solid #76838d;
+    }
+
+.stepper a:last-of-type:after{ display: none; }
+
+.stepper a:before { 
+    content: ""; 
+    display: inline-block; 
+    position: absolute; 
+    top: -2px; 
+    left: 0; 
+    z-index: 1; 
+    border-left: 17px solid white; 
+    border-top: 20px solid transparent; 
+    border-bottom: 20px solid transparent; 
+}
+
+.stepper a:first-child:before { display: none; }
+
+/* (DEPRECATED) Enroll Stepper (progress bar) */
+.stepper-img {
+    margin: 0 auto 18px;
+}
+
+.stepper-img .step {
+    background: url("img/enroll_stepper.png") transparent 0 -35px no-repeat;
+    height: 35px;
+    width: 200px;
+    float: left;
+    position: relative;
+    margin-left: -8px;
+    text-align: center;
+}
+
+.stepper-img .step .step-text {
+    position: relative;
+    top: 7px;
+    font-size: 14px;
+    color: #73848E;
+}
+
+.stepper-img .step.active {
+    background-position: 0 -140px;
+}
+
+.stepper-img .step.active .step-text {
+    color: #fff;
+}
+
+.stepper-img .step.first-step {
+    background-position: 0 0;
+    margin-right: -10px;
+    margin-left: 0;
+}
+
+.stepper-img .step.active.first-step {
+    background-position: 0 -105px;
+}
+
+.stepper-img .step.first-step .step-text {
+    left: -10px;
+}
+
+.stepper-img .step.last-step {
+    background-position: 0 -70px;
+    margin-left: -6px;
+    margin-right: 0;
+}
+
+.stepper-img .step.active.last-step {
+    background-position: 0 -175px;
+}
+
+.stepper-img .step.last-step .step-text {
+    right: -2px;
+}
+
+/**
+ * Enrolllment - Start
+ */
+#select-market-btns {
+    margin-bottom: 30px;
+    margin-left: 0;
+    list-style: none;
+}
+
+#select-market-btns li {
+    float: left;
+    width: 25%;
+    line-height: 25px;
+}
+
+#select-market-btns .btn {
+    border-radius: 15px;
+}
+
+#select-market-btns .icon-market-flag {
+    display: inline-block;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 20px;
+    height: 22px;
+    line-height: 22px;
+    background-image: url("img/icon_flags.png");
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+}
+
+#select-market-btns #argentina .icon-market-flag {
+    background-position: 50% -2px;
+}
+
+#select-market-btns #australia .icon-market-flag {
+    background-position: 50% -26px;
+}
+
+#select-market-btns #austria .icon-market-flag {
+    background-position: 50% -52px;
+}
+
+#select-market-btns #cambodia .icon-market-flag {
+    background-position: 50% -77px;
+}
+
+#select-market-btns #canada .icon-market-flag {
+    background-position: 50% -101px;
+}
+
+#select-market-btns #colombia .icon-market-flag {
+    background-position: 50% -127px;
+}
+
+#select-market-btns #denmark .icon-market-flag {
+    background-position: 50% -152px;
+}
+
+#select-market-btns #eu .icon-market-flag {
+    background-position: 50% -2px;
+}
+
+#select-market-btns #dr .icon-market-flag {
+    background-position: 50% -177px;
+}
+
+#select-market-btns #germany .icon-market-flag {
+    background-position: 50% -202px;
+}
+
+#select-market-btns #hongkong .icon-market-flag {
+    background-position: 50% -227px;
+}
+
+#select-market-btns #hungary .icon-market-flag {
+    background-position: 50% -251px;
+}
+
+#select-market-btns #india .icon-market-flag {
+    background-position: 50% -277px;
+}
+
+#select-market-btns #indonesia .icon-market-flag {
+    background-position: 50% -302px;
+}
+
+#select-market-btns #italy .icon-market-flag {
+    background-position: 50% -327px;
+}
+
+#select-market-btns #jamaica .icon-market-flag {
+    background-position: 50% -351px;
+}
+
+#select-market-btns #japan .icon-market-flag {
+    background-position: 50% -377px;
+}
+
+#select-market-btns #korea .icon-market-flag {
+    background-position: 50% -401px;
+}
+
+#select-market-btns #laos .icon-market-flag {
+    background-position: 50% -427px;
+}
+
+#select-market-btns #malaysia .icon-market-flag {
+    background-position: 50% -452px;
+}
+
+#select-market-btns #mexico .icon-market-flag {
+    background-position: 50% -477px;
+}
+
+#select-market-btns #netherlands .icon-market-flag {
+    background-position: 50% -501px;
+}
+
+#select-market-btns #newzealand .icon-market-flag {
+    background-position: 50% -527px;
+}
+
+#select-market-btns #nigeria .icon-market-flag {
+    background-position: 50% -551px;
+}
+
+#select-market-btns #philippines .icon-market-flag {
+    background-position: 50% -577px;
+}
+
+#select-market-btns #poland .icon-market-flag {
+    background-position: 50% -602px;
+}
+
+#select-market-btns #puertorico .icon-market-flag {
+    background-position: 50% -627px;
+}
+
+#select-market-btns #singapore .icon-market-flag {
+    background-position: 50% -651px;
+}
+
+#select-market-btns #sweden .icon-market-flag {
+    background-position: 50% -677px;
+}
+
+#select-market-btns #switzerland .icon-market-flag {
+    background-position: 50% -701px;
+}
+
+#select-market-btns #taiwan .icon-market-flag {
+    background-position: 50% -727px;
+}
+
+#select-market-btns #thailand .icon-market-flag {
+    background-position: 50% -752px;
+}
+
+#select-market-btns #turkey .icon-market-flag {
+    background-position: 50% -777px;
+}
+
+#select-market-btns #uae .icon-market-flag {
+    background-position: 50% -802px ;
+}
+
+#select-market-btns #ukraine .icon-market-flag {
+    background-position: 50% -827px;
+}
+
+#select-market-btns #uk .icon-market-flag {
+    background-position: 50% -852px;
+}
+
+#select-market-btns #unitedstates .icon-market-flag {
+    background-position: 50% -877px;
+}
+
+#select-market-btns #venezuela .icon-market-flag {
+    background-position: 50% -902px;
+}
+
+#select-market-btns #vietnam .icon-market-flag {
+    background-position: 50% -927px;
+}
+
+/* "Join As" buttons */
+.join-as {
+    padding: 10px;
+}
+
+.join-as .media-heading {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.join-as .enroll-type-name {
+    font-size: 1.5em;
+}
+
+.join-as .enroll-type-country {
+    color: #005580;
+    text-transform: uppercase;
+}
+
+.join-as .enroll-type-desc {
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+/**
+ * Enrollment -Starter Packs
+ */
+/* starter packs */
+#starter-packs .packs table {
+    border-bottom: 1px solid #D1D3D4;
+}
+
+#starter-packs .packs table > tr td {
+    border-top: none;
+}
+
+#starter-packs .packs td {
+    padding: 10px;
+}
+
+#starter-packs .packs td.rank-selector {
+    padding: 10px 0;
+}
+
+#starter-packs .rank-selector input {
+    margin: 3px 5px 0 0;
+    vertical-align: top;
+}
+
+#starter-packs .rank-selector .rank-name {
+    margin: 0;
+    color: #676868;
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+#starter-packs .packs table a {
+    color: #4F92CE;
+    font-size: 12px;
+    text-decoration: underline;
+    line-height: 150%;
+    cursor: pointer;
+}
+
+#starter-packs .packs table .pack-include-description {
+    margin-right: 10px;
+    color: #676868;
+    font-size: 10px;
+    line-height: 1.2em;
+}
+
+/* starter packs --tooltip */
+#starter-packs .pack-includes .pack-includes-tooltip {
+    position: absolute;
+    display: none;
+    margin: -25px 0 0 16px;
+    border: 1px solid #4F92CE;
+    padding: 15px 16px 14px 17px;
+    width: 132px;
+    color: #000;
+    background-color: #FFF;
+
+    -webkit-box-shadow: 0 0 10px #606060;
+    box-shadow: 0 0 10px #606060;
+}
+
+#starter-packs .pack-includes .pack-includes-tooltip p {
+    margin-top: 14px;
+    font-size: 10px;
+}
+
+#starter-packs .pack-includes .pack-includes-tooltip .tooltip-img {
+    position: absolute;
+    display: block;
+    left: -23px;
+}
+
+/* starter packs --customize */
+#starter-packs #customize .accordion-group {
+    border: 0;
+    border-radius: 0;
+    // background-color: #F1F2F2;
+}
+
+#starter-packs #customize .accordion-heading {
+    border-bottom: none;
+}
+
+#starter-packs #customize .accordion-heading a,#starter-packs #customize .accordion-heading a > div,#starter-packs #customize .accordion-heading a > span {
+    color: #4F92CE;
+    font-size: 11px;
+    text-decoration: underline;
+}
+
+#starter-packs #customize .accordion-heading .btn.active {
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+
+#starter-packs #customize .accordion-heading .btn i {
+    margin-right: 10px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+}
+
+#starter-packs #customize .accordion-toggle {
+    // border: 1px solid #CCC;
+    // padding: 8px;
+    // min-height: 0;
+    // background-color: #F1F2F2;
+    padding: 0;
+}
+
+#starter-packs #customize .accordion-toggle p {
+    font-size: 11px;
+}
+
+#starter-packs #customize .accordion-inner {
+    border-top-width: 0;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-style: solid;
+    padding: 0;
+    border-color: #D1D3D4;
+}
+
+#starter-packs #customize .shaded {
+    background-color: #F1F2F2;
+}
+
+#starter-packs #customize .pack-customize-instructions {
+    padding: 8px;
+    background-color: #E6E7E8;
+    min-height: 0;
+}
+
+#starter-packs #customize .pack-customize-instructions p {
+    font-size: 11px;
+}
+
+#starter-packs #customize .pack-customize-option {
+    padding: 18px 5px 8px;
+    // margin-left: 0;
+    // width: 25%;
+}
+
+#starter-packs #customize .pack-customize-option:nth-child(odd) {
+    background-color: #F1F2F2;
+}
+
+#starter-packs #customize .product-thumb {
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+#starter-packs #customize .pack-customize-option .pack-product-select .or {
+    padding: 0 10px;
+}
+
+#starter-packs #customize .pack-customize-option .pack-product-select .span10 {
+    margin-left: 0;
+}
+
+#starter-packs #customize .pack-customize-option .pack-product-select p {
+    margin: 3px 0 0 0;
+    font-size: 10px;
+}
+
+#starter-packs #customize .pack-customize-option .pack-product-select input {
+    margin: 0;
+}
+
+#starter-packs #customize .pack-customize-option .pack-product-select [class*="span"] {
+    min-height: 0;
+}
+
+#starter-packs #customize .pack-customize-option .pack-product-select .or hr {
+    margin: 10px 0;
+    border-top-width: 1px;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: #CCC;
+}
+
+#starter-packs #customize .pack-customize-option .pack-product-select .or p {
+    margin: 1px 0;
+    font-size: 8px;
+}
+
+#starter-packs #customize .pack-customize-option .pack-product-description p {
+    margin: 12px 5px 2px;
+    font-size: 10px;
+    line-height: 1.2em;
+}
+
+/**
+ * Enrollment -Product List (found on Starter-Packs and Auto-Refill)
+ */
+.products .section-title h4 {
+    margin: 0;
+    color: #4E4E4E;
+    font-size: 20px;
+}
+
+.products .section-title h5 {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* product list */
+.products .product-list {
+    border: 1px solid;
+    border-top-width: 0;
+    border-right-color: #CDCCCC;
+    border-bottom-color: #DFDEDE;
+    border-left-color: #CDCCCC;
+}
+
+.products .product-list .product {
+    margin: 0;
+    border-top: 1px solid #DFDEDE;
+    padding: 9px 10px 9px 5px;
+    background-color: #FAFAFC;
+}
+
+.products .product-list .product {
+    background-color: #fff;
+}
+
+.products .product-list > div:nth-child(odd) .product {
+    background-color: #F1F1F1;
+}
+
+.products .product img {
+    margin-top: 5px;
+}
+
+.products .product .product-title {
+    display: inline-block;
+}
+
+.products .product .product-title h5 {
+    margin: 0;
+    font-size: 14px;
+    font-family: "OpenSansSemibold", "OpenSans", "Arial";
+}
+
+.products .product [class*="span"] {
+    min-height: 0;
+}
+
+.products .product span {
+    margin-right: 20px;
+    font-size: 13px;
+    color: #000;
+}
+
+.products .product .quantity-container {
+    margin-top: 4px;
+    // padding-left: 15px;
+}
+
+.products .product .quantity {
+    margin: 0;
+    border-width: 1px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -webkit-border-top-right-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    -moz-border-top-left-radius: 4px;
+    -moz-border-bottom-left-radius: 4px;
+    -moz-border-top-right-radius: 0;
+    -moz-border-bottom-right-radius: 0;
+    padding: 4px 6px;
+    height: 21px;
+    width: 30px;
+    background-color: #fff;
+    border-color: #AAABAB;
+    color: #000;
+    font-size: 13px;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.products .product .button {
+    position: relative;
+    display: block;
+    margin: 0;
+    border: 1px solid #AAABAB;
+    border-left-width: 0;
+    padding: 3px 4px;
+    width: 12px;
+    color: #555;
+    font-size: 10px;
+    text-align: center;
+    line-height: 80%;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.products .product .button:hover {
+    background-color: #BBB;
+    cursor: pointer;
+}
+
+.products .product .buttons .up {
+    border-top-right-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-top-right-radius: 4px;
+}
+
+.products .product .buttons .down {
+    border-top-width: 0;
+    border-bottom-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-bottom-right-radius: 4px;
+}
+
+.products .product .buttons {
+    margin-left: 0;
+}
+
+/* auto-refill search */
+.products .product-search input[type="text"] {
+    margin: 0;
+    border: 1px solid;
+    border-radius: 0;
+    padding: 0 24px 0 8px;
+    width: 198px;
+    height: 22px;
+    background-image: url('img/search-img.png'), url('img/search-bg.png');
+    background-position: 97% 5px, left top;
+    background-repeat: no-repeat, repeat-x;
+    background-color: #fff;
+    border-top-color: #666;
+    border-left-color: #666;
+    border-right-color: #C0BFBF;
+    border-bottom-color: #C0BFBF;
+    color: #4E4E4E;
+    font-size: 13px;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.products .product-search .x {
+    float: right;
+    margin-top: 3px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    opacity: .6; /* For IE8 and earlier */
+    cursor: pointer;
+}
+
+.products .product-search .x:hover {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1; /* For IE8 and earlier */
+    cursor: pointer;
+}
+
+.products .search-results {
+    margin-top: 30px;
+}
+
+/**
+ * Enrollment -Account Setup
+ */
+/* Password Strength Bar */
+#password-strength.progress {
+    height: 10px !important;
+    margin: 5px 0;
+}
+
+/**
+ * Enrollment -Payment
+ */
+/* Payment directive styles */
+img.cc{
+    -webkit-opacity:.3;
+    -moz-opacity: .3;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    opacity: .3;
+    &.selected{
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: alpha(opacity=100);
+        opacity:1;
+    }
+}
+
+/**
+ * Enrollment -Summary
+ */
+/* Enrollment Summary */
+.summarysection {
+    margin-bottom: 10px;
+}
+
+.order-items {
+    border-bottom: 1px dotted #333;
+    padding-bottom: 5px;
+}
+
+
+/*--x-editable styling--*/
+span.editable{padding-top:5px;}
+
+
+/*--Password Status Styles--*/
+.password-match{
+    margin-top:50px;
+    &.error{
+        color:#b94a48;
+    }
+}
+.progress.password-strength{
+    &.progress-success{
+        .bar{width:75%;}
+       
+        &.complete{
+        .bar{
+            width:100%;
+        }
+    }
+}
+    &.progress-warning{
+        .bar{
+            width:50%;
+        }
+    }
+
+    &.progress-danger{
+        .bar{
+            width:25%;
+        }
+    }
+}
+
+/*-- X-Editable Overrides --*/
+.editable-container.editable-inline {
+    margin-top: -1px;
+    margin-left: -6px;
+}
+
+.xedit-list li {
+    line-height: 30px;
+    margin-bottom: 10px;
+    position:relative;
+    span.editable {
+        z-index: 5;
+        position: absolute;
+        border: none;
+        top: 0px;
+        padding: 0px;
+        left: 140px;
+    }
+
+    a.btn-mini.btn-success {
+        position: absolute;
+        right: 0px;
+        z-index: 4;
+        &:active, &:focus, &:hover{
+            background-color: #5bb75b;
+            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+            -webkit-transition:none;
+            -moz-transition:none;
+            transition:none;
+            background-position:0 0;
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+            background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+            background-image: -o-linear-gradient(top, #62c462, #51a351);
+            background-image: linear-gradient(to bottom, #62c462, #51a351);
+            -ms-filter: none;
+            filter: none;
+        }
+    }
+}
+
+.xedit-list li:last-child {
+    margin-bottom: 0;
+}
+
+/**
+ * Enrollment -language-specific styles
+ */
+/*body.fr_CA{
+    .stepper a {
+        font-size: 11px;
+    }
+}*/
+

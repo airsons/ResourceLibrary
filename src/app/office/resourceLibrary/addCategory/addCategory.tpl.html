@@ -1,0 +1,12 @@
+<div class="heading">
+    <h3><t>add_new_category</t></h3>
+    <div class="control-group">
+        <div class="span8">
+             <input validate maxlength="200" ng-model="categoryName" noempty="true" type="text" class="span5">
+        </div>
+        <div class="span8">           
+            <a trigger-check="true" validate success="save()" class="btn btn-success"><t>global_save</t></a>
+            <a ng-click="back()" class="btn btn-inverse"><t>global_cancel</t></a>            
+        </div>
+    </div>
+</div>
